@@ -1,785 +1,102 @@
 <!doctype html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="index,follow">
-<title>템첵 | 오늘의 하루특가 · 오늘의 딜</title>
-<meta name="description" content="토스쇼핑 하루특가 중 할인율 높은 것만 매일 골라 올려요.">
-<meta property="og:title" content="템첵 | 오늘의 하루특가 · 오늘의 딜">
-<meta property="og:description" content="토스쇼핑 하루특가 중 할인율 높은 것만 매일 골라 올려요.">
-<meta property="og:image" content="">
-<meta property="og:type" content="website">
+<title>마감체크 · 신청 링크 모음</title>
+<meta name="description" content="놓치면 손해인 지원금·방청 신청 링크를 마감 임박순으로 모았어요. 마감 지난 건 자동으로 빠집니다.">
+<meta property="og:title" content="마감체크 · 신청 링크 모음">
+<meta property="og:description" content="영상 속 번호로 찾아서 바로 신청하세요.">
 <style>
-  :root {
-    --bg:#0B0D12; --surface:#151922; --surface2:#1C2230; --text:#FFFFFF;
-    --muted:#8B95A1; --accent:#FF4D4D; --blue:#3182F6; --radius:20px;
-  }
-  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body { margin:0; background:var(--bg); color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif; }
-  a { color:inherit; text-decoration:none; }
-  .disclosure-top { position:sticky; top:0; z-index:9; background:var(--surface);
-    border-bottom:1px solid #222836; padding:10px 16px; font-size:12px; color:var(--muted);
-    text-align:center; padding-top:calc(10px + env(safe-area-inset-top)); }
-  .disclosure-top b { color:var(--blue); font-weight:700; margin-right:6px; }
-  .wrap { max-width:520px; margin:0 auto; padding:20px 16px 48px; }
-  header { padding:8px 0 20px; }
-  .handle { font-size:14px; color:var(--muted); font-weight:600; letter-spacing:.2px; }
-  h1 { font-size:26px; line-height:1.25; margin:6px 0 4px; font-weight:800; }
-  .updated { font-size:13px; color:var(--muted); }
-  .grid { display:grid; gap:12px; }
-  .card { display:flex; gap:14px; background:var(--surface); border-radius:var(--radius);
-    padding:12px; align-items:center; border:1px solid #1D2330; transition:transform .08s ease; }
-  .card:active { transform:scale(.985); background:var(--surface2); }
-  .thumb { position:relative; flex:0 0 96px; width:96px; height:96px; border-radius:14px;
-    overflow:hidden; background:#252A35; }
-  .thumb img { width:100%; height:100%; object-fit:cover; display:block; font-size:0; }
-  .badge { position:absolute; top:6px; left:6px; background:var(--accent); color:#fff;
-    font-size:12px; font-weight:800; padding:3px 7px; border-radius:8px; }
-  .body { flex:1; min-width:0; }
-  .name { font-size:15px; font-weight:600; line-height:1.35; margin:0 0 6px;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-  .price { font-size:20px; font-weight:800; }
-  .price { white-space:nowrap; }
-  .price small { font-size:13px; color:var(--muted); font-weight:500; text-decoration:line-through; margin-left:6px; }
-  .meta { font-size:12px; color:var(--muted); margin-top:4px; display:flex; gap:8px; flex-wrap:wrap; }
-  .meta .hot { color:var(--accent); font-weight:700; }
-  .cta { flex:0 0 auto; background:var(--blue); color:#fff; font-size:13px; font-weight:700;
-    padding:10px 12px; border-radius:12px; white-space:nowrap; }
-  .empty { text-align:center; color:var(--muted); padding:60px 0; }
-  footer { margin-top:32px; font-size:12px; color:var(--muted); line-height:1.6; }
-  footer .links { margin-top:14px; display:flex; gap:14px; }
-  footer .links a { color:var(--blue); font-weight:600; }
-  .search { position:relative; margin:2px 0 18px; }
-  .search input { width:100%; padding:14px 16px 14px 44px; border-radius:14px; border:1px solid #222836;
-    background:var(--surface); color:var(--text); font-size:15px; outline:none; }
-  .search input:focus { border-color:var(--blue); }
-  .search .icon { position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:16px; color:var(--muted); }
-  .sec-title { font-size:17px; font-weight:800; margin:26px 0 10px; display:flex; align-items:center; gap:8px; }
-  .tabs { display:flex; gap:8px; margin:4px 0 14px; position:sticky; top:0; z-index:5; padding:8px 0; background:var(--bg); }
-  .tab { flex:1; text-align:center; padding:12px 10px; border-radius:14px; border:1px solid #222836; background:#141821;
-          color:var(--muted); font-weight:800; font-size:15px; cursor:pointer; user-select:none; }
-  .tab.on { background:var(--blue); border-color:var(--blue); color:#fff; }
-  .tab small { font-weight:600; opacity:.85; margin-left:4px; }
-  .pane { display:none; } .pane.on { display:block; }
-  .sec-title small { font-size:12px; color:var(--muted); font-weight:500; }
-  .no-badge { position:absolute; top:6px; left:6px; background:var(--blue); color:#fff;
-    font-size:12px; font-weight:800; padding:3px 7px; border-radius:8px; }
-  .noresult { display:none; text-align:center; color:var(--muted); padding:24px 0; font-size:14px; }
-</style>
-</head>
-<body>
-<div class="disclosure-top"><b>광고</b>이 게시물은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
-<div class="wrap">
-  <header>
-    <div class="handle">@temcheck.daily</div>
-    <h1>오늘의 하루특가 전체 28개</h1>
-    <div class="updated">09월 18일 00:04 기준 · 자정에 상품이 바뀌어요 · 가격·재고는 변동될 수 있어요</div>
-  </header>
+:root{--bg:#FDF6EA;--card:#fff;--ink:#141414;--muted:#8A7E70;--or:#FCA831;--deep:#F0722A;--line:#EFE6D8}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);word-break:keep-all;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:560px;margin:0 auto;padding:20px 16px 48px}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.brand{background:var(--ink);color:var(--or);font-weight:900;padding:8px 16px;border-radius:999px;font-size:17px}
+.ig{color:var(--muted);font-size:14px}
+h1{font-size:26px;line-height:1.3;margin:10px 0 6px;font-weight:900}
+h1 em{font-style:normal;color:var(--deep)}
+.sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+.search{display:flex;gap:8px;margin:0 0 18px}
+.search input{flex:1;font-size:17px;padding:13px 14px;border:2px solid var(--line);border-radius:14px;background:#fff;outline:none}
+.search input:focus{border-color:var(--or)}
+.search button{font-size:16px;font-weight:800;padding:0 18px;border:0;border-radius:14px;background:var(--ink);color:#fff}
+.card{display:block;background:var(--card);border-radius:20px;padding:16px 18px;margin-bottom:12px;box-shadow:0 2px 0 var(--line);border:2px solid transparent;transition:border-color .2s}
+.card.focus{border-color:var(--deep)}
+.row1{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.no{background:var(--ink);color:#fff;font-weight:900;min-width:32px;height:32px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px;padding:0 8px}
+.region{background:#F6E3C4;font-weight:800;font-size:14px;padding:5px 10px;border-radius:999px}
+.badge{margin-left:auto;font-weight:900;font-size:14px;padding:5px 12px;border-radius:999px;background:#F2EDE5;color:var(--ink)}
+.badge.hot{background:var(--deep);color:#fff}
+.badge.soon{background:#E8F0FF;color:#2F5BD3}
+.title{font-size:19px;font-weight:900;line-height:1.35}
+.amount{font-size:17px;font-weight:800;color:var(--deep);margin-top:4px}
+.who{font-size:14px;color:#4A443C;margin-top:6px;line-height:1.45}
+.row2{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.go{color:var(--ink);font-weight:800}
+.empty{text-align:center;color:var(--muted);padding:40px 0}
+.foot{color:var(--muted);font-size:12.5px;line-height:1.6;margin-top:24px;text-align:center}
+</style></head>
+<body><div class="wrap">
+<div class="top"><span class="brand">마감체크</span><a class="ig" href="https://www.instagram.com/magam.check/">@magam.check</a></div>
+<h1>놓치면 손해인<br><em>신청 링크</em> 모음</h1>
+<p class="sub">마감 임박순 · 마감 지난 건 자동으로 빠져요 · 09/27 15:11 기준</p>
+<form class="search" onsubmit="go();return false"><input id="q" inputmode="numeric" placeholder="영상 속 번호 입력 (예: 3)"><button>찾기</button></form>
 
-  <div class="tabs" role="tablist">
-    <div class="tab on" id="tab-deals" data-pane="pane-deals">🔥 오늘의 하루특가 <small>28</small></div>
-    <div class="tab" id="tab-steady" data-pane="pane-steady">📌 추천템 보관함 <small>24</small></div>
-  </div>
+<a class="card" id="n1" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/O00043900003" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">1</span><span class="region">경기</span><span class="badge hot">D-1</span></div>
+  <div class="title">장애인 평생교육이용권 추가모집</div>
+  <div class="amount">1인 35만원 포인트 · 평생교육 강좌 수강에 사용</div>
+  <div class="who">경기도 거주 19세 이상 등록 장애인 (전체 938명, 저소득층 우선 후 선착순)</div>
+  <div class="row2"><span>~ 9/28(월)</span><span class="go">신청 페이지 →</span></div>
+</a>
 
-  <div class="search">
-    <span class="icon">🔍</span>
-    <input id="q" type="search" inputmode="search" placeholder="상품 이름이나 추천템 번호로 검색" autocomplete="off">
-  </div>
+<a class="card" id="n2" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/650000001089" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">2</span><span class="region">제주</span><span class="badge hot">D-3</span></div>
+  <div class="title">배달·이동노동자 산재보험료 지원</div>
+  <div class="amount">산재보험료 본인부담 90% · 연 최대 20만원</div>
+  <div class="who">제주 주소지 · 퀵·대리운전·택배·방문강사·화물차주·보험설계사 등 10개 직종</div>
+  <div class="row2"><span>~ 9/30(수)</span><span class="go">신청 페이지 →</span></div>
+</a>
 
-  <section class="pane on" id="pane-deals">
-    <div class="sec-title" id="deals-title">🔥 오늘의 하루특가 <small>자정에 바뀌어요 · 마감 23시</small></div>
-    <main class="grid" id="deals">
-    <a class="card" href="https://toss.im/_m/9z5bCqnx" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/MWIxNWY5/QUp6QjVkb2YzTHNDZllkd0tNQUVOVjdBL3lvckVsVUtGaS83MVIvK29DSXQ.png" alt="법성포 영광굴비, 20cm 내외, 20마리" loading="lazy">
-        <span class="badge">85%</span>
-      </div>
-      <div class="body">
-        <p class="name">법성포 영광굴비, 20cm 내외, 20마리</p>
-        <div class="price">28,900원<small>200,000원</small></div>
-        <div class="meta">★ 4.3 · 리뷰 3,291 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/l5e0GGf7" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2025-04-24/c754060d-24ee-42a1-a3bc-e7fb5532b79d.jpeg" alt="설수련 진 한방 스킨케어 3종 세트, 1세트" loading="lazy">
-        <span class="badge">85%</span>
-      </div>
-      <div class="body">
-        <p class="name">설수련 진 한방 스킨케어 3종 세트, 1세트</p>
-        <div class="price">14,800원<small>99,000원</small></div>
-        <div class="meta">★ 4.5 · 리뷰 3,005 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/9FyAdBO9" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/NzhjZjhh/QU5HR09jWlhPWXNZT2NhT09XVHR4bmJISnpIaEMxSzFyWmlabDY5dWVVcFM.png" alt="아이제나흐 에센 스테인레스 2단 찜솥, 28cm, 1세트" loading="lazy">
-        <span class="badge">81%</span>
-      </div>
-      <div class="body">
-        <p class="name">아이제나흐 에센 스테인레스 2단 찜솥, 28cm, 1세트</p>
-        <div class="price">10,990원<small>59,900원</small></div>
-        <div class="meta">★ 4.4 · 리뷰 717 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/XVOQQXHy" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-08-10/1e4fe51d-5eff-40b9-82e5-057e3a8529d9.png" alt="수뜰리에 소프트 섬유유연제 비누향, 2.5L, 4개" loading="lazy">
-        <span class="badge">78%</span>
-      </div>
-      <div class="body">
-        <p class="name">수뜰리에 소프트 섬유유연제 비누향, 2.5L, 4개</p>
-        <div class="price">8,390원<small>39,600원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 9,959 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/h5ecKKtn" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-04-28/3d7bc3f0-d433-4873-8d28-55383839e567.jpeg" alt="칼로쿡 IH 스텐 올인원 튀김냄비 6p, 1세트" loading="lazy">
-        <span class="badge">68%</span>
-      </div>
-      <div class="body">
-        <p class="name">칼로쿡 IH 스텐 올인원 튀김냄비 6p, 1세트</p>
-        <div class="price">15,900원<small>49,900원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 137 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/N3nONgHt" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZDdjNzBj/TDJXKys3VE9kLy9hM3YrL3l0UC96NkY3M3Y0M0lXbjdKNkcyODFyVS8rMD0.png" alt="리벤스 로얄플러스 물티슈, 캡형, 70매, 10팩" loading="lazy">
-        <span class="badge">65%</span>
-      </div>
-      <div class="body">
-        <p class="name">리벤스 로얄플러스 물티슈, 캡형, 70매, 10팩</p>
-        <div class="price">10,800원<small>30,900원</small></div>
-        <div class="meta">★ 4.8 · 리뷰 3,290 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/N8LKUXd3" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-06-21/49760286-df18-49af-9c70-2c27287f6b7c.jpeg" alt="고기중독 닭다리 북채, 1kg, 2팩" loading="lazy">
-        <span class="badge">61%</span>
-      </div>
-      <div class="body">
-        <p class="name">고기중독 닭다리 북채, 1kg, 2팩</p>
-        <div class="price">15,480원<small>39,900원</small></div>
-        <div class="meta">★ 4.2 · 리뷰 3,606 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/VM0flTyd" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZjllOWU2/QUpmRE85aG9IZVFubC9BYnlYQVA1TFR2K0p0TEVBTmt0T3ZzdTB1VlVIeTA.png" alt="페페브루노 엑스트라버진 올리브 오일, 1L, 1개" loading="lazy">
-        <span class="badge">58%</span>
-      </div>
-      <div class="body">
-        <p class="name">페페브루노 엑스트라버진 올리브 오일, 1L, 1개</p>
-        <div class="price">14,500원<small>35,000원</small></div>
-        <div class="meta">★ 4.7 · 리뷰 5,544 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/dulRspPf" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2025-05-21/763050f4-d5dc-46f1-b67c-8fce75a39cdf.jpeg" alt="그대로푸드 탈피 들깨가루, 1kg, 1개" loading="lazy">
-        <span class="badge">57%</span>
-      </div>
-      <div class="body">
-        <p class="name">그대로푸드 탈피 들깨가루, 1kg, 1개</p>
-        <div class="price">9,800원<small>22,900원</small></div>
-        <div class="meta">★ 4.5 · 리뷰 3,846 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/N1KrfeWg" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-08-19/ae4cf163-afc9-4e5b-b8fd-b201941155dd.jpeg" alt="필라델피아 크림치즈 미니, 41g, 16개" loading="lazy">
-        <span class="badge">57%</span>
-      </div>
-      <div class="body">
-        <p class="name">필라델피아 크림치즈 미니, 41g, 16개</p>
-        <div class="price">8,500원<small>19,900원</small></div>
-        <div class="meta">★ 4.7 · 리뷰 1,470 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/JuxFt5e7" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/v2/M2EwNjBk/V0V5aEtmU2tFVEE4MTdwMk5FSkF6dEtkYXd5SFBmd1lPS1BncDUwUFdoND0.png" alt="붕이네 국내산 머스크 멜론 특품, 특대과, 2수, 4kg, 1박스" loading="lazy">
-        <span class="badge">57%</span>
-      </div>
-      <div class="body">
-        <p class="name">붕이네 국내산 머스크 멜론 특품, 특대과, 2수, 4kg, 1박스</p>
-        <div class="price">15,470원<small>36,500원</small></div>
-        <div class="meta">★ 4.3 · 리뷰 211 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/PVlF9A6m" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZmFhZDlk/V1hQR1p1eGpHUTJWNTRNZGx0ZmhMWEtiQkxtb2JTVDF4ZW5Ua0g2bEZ2bz0.png" alt="순삭 떡볶이, 보통맛, 200g, 5팩" loading="lazy">
-        <span class="badge">56%</span>
-      </div>
-      <div class="body">
-        <p class="name">순삭 떡볶이, 보통맛, 200g, 5팩</p>
-        <div class="price">8,990원<small>20,900원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 1,771 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/BRaHzjTv" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZWIzOTQ5/QUxObmMyUHhhOFpwZE02NWFlSVM3SmJOdWIwM210UVlsRGs0Vms1elVLazU.png" alt="진주햄 천하장사 더블링, 콰트로치즈, 25g, 10개입, 3개" loading="lazy">
-        <span class="badge">54%</span>
-      </div>
-      <div class="body">
-        <p class="name">진주햄 천하장사 더블링, 콰트로치즈, 25g, 10개입, 3개</p>
-        <div class="price">12,900원<small>28,500원</small></div>
-        <div class="meta">★ 4.8 · 리뷰 632 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/F0cj53Oj" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-08-30/1c27856c-bfba-4578-b12a-cf60c463d32a.jpeg" alt="한우 사골 잡뼈 세트, 10kg, 1박스" loading="lazy">
-        <span class="badge">54%</span>
-      </div>
-      <div class="body">
-        <p class="name">한우 사골 잡뼈 세트, 10kg, 1박스</p>
-        <div class="price">26,900원<small>58,900원</small></div>
-        <div class="meta">★ 4.4 · 리뷰 33 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/hGygoFgc" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-08-26/4e3daee7-51fd-498a-b856-0a5fae0723e1.png" alt="자동 변기세정제 맥스, 320g, 4개" loading="lazy">
-        <span class="badge">53%</span>
-      </div>
-      <div class="body">
-        <p class="name">자동 변기세정제 맥스, 320g, 4개</p>
-        <div class="price">6,990원<small>14,900원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 8,621 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/Z9WNGS6i" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZGI5Nzhl/QU5KVDJuVFB3N2JrV25KcmROclVVelBMUkVwU21hU1dXMnAwV3RUYVVhV3I.png" alt="뷰카 클래식 고불소 구취 케어 치약, 아쿠아 민트향, 110g, 4개" loading="lazy">
-        <span class="badge">52%</span>
-      </div>
-      <div class="body">
-        <p class="name">뷰카 클래식 고불소 구취 케어 치약, 아쿠아 민트향, 110g, 4개</p>
-        <div class="price">9,900원<small>20,900원</small></div>
-        <div class="meta">★ 4.8 · 리뷰 3,223 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/NBribz4m" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-09-17/4e422b53-ede8-4e9e-85c8-5ad4218958bb.jpeg" alt="안성마춤농협 고시히카리쌀, 특등급, 10kg, 1개" loading="lazy">
-        <span class="badge">52%</span>
-      </div>
-      <div class="body">
-        <p class="name">안성마춤농협 고시히카리쌀, 특등급, 10kg, 1개</p>
-        <div class="price">41,900원<small>89,000원</small></div>
-        <div class="meta"><span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/xIPK6xT4" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZjRhYzhi/VmhaK0dzSjI1RFcwNVE2ZVEwTUpkWFV2N0xqQ1V5WDVCVzk2cHVnYjlZbz0.png" alt="이든농수산 자숙 연지홍게, 8kg, 1박스" loading="lazy">
-        <span class="badge">51%</span>
-      </div>
-      <div class="body">
-        <p class="name">이든농수산 자숙 연지홍게, 8kg, 1박스</p>
-        <div class="price">21,900원<small>45,000원</small></div>
-        <div class="meta">★ 3.9 · 리뷰 338 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/rQDhVnbn" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/YzJiYmY2/QStGYVNvQ1NvOG81empEME5KWEtUWnQ5OXZubmFXcytZN1NYaXlVTE1IST0.png" alt="자연품애 사과, 주스용, 랜덤과, 10kg, 1박스" loading="lazy">
-        <span class="badge">50%</span>
-      </div>
-      <div class="body">
-        <p class="name">자연품애 사과, 주스용, 랜덤과, 10kg, 1박스</p>
-        <div class="price">15,490원<small>31,000원</small></div>
-        <div class="meta">★ 4.2 · 리뷰 584 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/ZjcQxiRy" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-07-09/e57076fd-010b-40ca-9945-50f1c7759e58.jpeg" alt="하루한콩 구운 병아리콩, 군옥수수맛, 15g, 22개입, 1개" loading="lazy">
-        <span class="badge">44%</span>
-      </div>
-      <div class="body">
-        <p class="name">하루한콩 구운 병아리콩, 군옥수수맛, 15g, 22개입, 1개</p>
-        <div class="price">8,900원<small>15,900원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 6,631 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/ThJbuB3g" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/MDIzNTJk/QUptNFVaWW0zYk1uV3h5UXhqbDVHMG5XYmUyZXJIYkdHWE16blRHelpubXo.png" alt="웰던도니츠 팝핀 수제도넛 5가지맛, 15개입, 1세트" loading="lazy">
-        <span class="badge">39%</span>
-      </div>
-      <div class="body">
-        <p class="name">웰던도니츠 팝핀 수제도넛 5가지맛, 15개입, 1세트</p>
-        <div class="price">10,900원<small>17,900원</small></div>
-        <div class="meta">★ 4.4 · 리뷰 5,311 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/7QY1UZTe" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/YTAxMDhk/QUoyRVBNVWFwMHFqd3FMUm1OV2N3SzJDTElNdGswTWt4MVJpNC8valBYSU4.png" alt="코리아푸드 백옥콘 강냉이, 1.4kg, 1개" loading="lazy">
-        <span class="badge">35%</span>
-      </div>
-      <div class="body">
-        <p class="name">코리아푸드 백옥콘 강냉이, 1.4kg, 1개</p>
-        <div class="price">8,900원<small>13,900원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 3,578 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/nctqqPyo" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/ZThhMTYy/SVRad25ld3lFVXdHN1dOenROZms3RXNwSE9RU3hCc0hFcDIyOGExakcyWT0.png" alt="양계장청년 난각1번 자연방사 상황버섯 먹여 키운 무항생제 유정란, 60구, 1박스" loading="lazy">
-        <span class="badge">33%</span>
-      </div>
-      <div class="body">
-        <p class="name">양계장청년 난각1번 자연방사 상황버섯 먹여 키운 무항생제 유정란, 60구, 1박스</p>
-        <div class="price">33,000원<small>49,300원</small></div>
-        <div class="meta">★ 4.6 · 리뷰 1,625 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/FyoNTIjs" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2025-09-04/da67acda-6168-4871-ab1a-b57949d894c3.jpeg" alt="이제부터 설탕없는 진짜 생강 진액, 1L, 1개" loading="lazy">
-        <span class="badge">33%</span>
-      </div>
-      <div class="body">
-        <p class="name">이제부터 설탕없는 진짜 생강 진액, 1L, 1개</p>
-        <div class="price">13,200원<small>19,800원</small></div>
-        <div class="meta">★ 4.4 · 리뷰 281 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/jloMWrJt" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-07-01/c531b0a1-b43a-4e3b-9457-853e56f55bab.png" alt="셰프초이스 동그랑땡, 2kg, 1개" loading="lazy">
-        <span class="badge">30%</span>
-      </div>
-      <div class="body">
-        <p class="name">셰프초이스 동그랑땡, 2kg, 1개</p>
-        <div class="price">17,900원<small>25,900원</small></div>
-        <div class="meta">★ 4.8 · 리뷰 43 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/D0LNsQix" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2026-07-31/e4c70dbc-c6ac-4f5a-97fe-ebf23d091726.jpeg" alt="친정댁 매콤삼겹살, 1kg, 1개" loading="lazy">
-        <span class="badge">26%</span>
-      </div>
-      <div class="body">
-        <p class="name">친정댁 매콤삼겹살, 1kg, 1개</p>
-        <div class="price">13,900원<small>18,900원</small></div>
-        <div class="meta"><span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/9hzneHFz" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/taca/ai/NDI4NmJj/REQvSVNYc0hvRHVVVFBEbWFKUElXWkpIdGJkTUxNcG9zcE94dDh4c3lrMD0.png" alt="헬리코박터 프로젝트 윌, 180ml, 10개" loading="lazy">
-        <span class="badge">24%</span>
-      </div>
-      <div class="body">
-        <p class="name">헬리코박터 프로젝트 윌, 180ml, 10개</p>
-        <div class="price">15,100원<small>19,900원</small></div>
-        <div class="meta">★ 4.7 · 리뷰 1,509 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/DJ2goziC" rel="nofollow sponsored noopener" target="_blank">
-      <div class="thumb">
-        <img src="https://shopping.toss.im/live/temp/2025-07-07/821d7458-0bc5-4755-be45-eb0485958d8e.jpeg" alt="칸타타 아이스 커피 헤이즐넛, 190ml, 20개" loading="lazy">
-        <span class="badge">18%</span>
-      </div>
-      <div class="body">
-        <p class="name">칸타타 아이스 커피 헤이즐넛, 190ml, 20개</p>
-        <div class="price">10,400원<small>12,800원</small></div>
-        <div class="meta">★ 4.7 · 리뷰 1,189 · <span class="hot">마감 오늘 23시까지</span></div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    </main>
-    <div class="noresult" id="deals-noresult">오늘 특가 중엔 없어요 🥲 보관함도 찾아볼까요?</div>
-  </section>
+<a class="card" id="n3" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/405000000678" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">3</span><span class="region">용인</span><span class="badge ">D-5</span></div>
+  <div class="title">초·중·고 신입생 입학준비금</div>
+  <div class="amount">1인 10만원 · 용인 지역화폐로 지급</div>
+  <div class="who">용인시 주민등록 초·중·고 1학년 (다른 지역 학교 재학·전입생·대안교육기관 포함)</div>
+  <div class="row2"><span>~ 10/2(금)</span><span class="go">신청 페이지 →</span></div>
+</a>
 
-  <section class="pane" id="pane-steady">
-  <div class="sec-title" id="steady-title">📌 추천템 보관함 <small>번호 또는 이름으로 검색</small></div>
-  <main class="grid" id="steady">
-    <a class="card" href="https://toss.im/_m/pZ5qBsLt" rel="nofollow sponsored noopener" target="_blank" data-no="24" data-name="스파클 생수, 무라벨, 2l, 24개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260917_st1_10142255.jpg" alt="스파클 생수, 무라벨, 2L, 24개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">24번</span>
-      </div>
-      <div class="body">
-        <p class="name">스파클 생수, 무라벨, 2L, 24개</p>
-        <div class="price">13,500원</div>
-        <div class="meta">추천템 No.24 · 2026-09-17</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/XVOQQXHy" rel="nofollow sponsored noopener" target="_blank" data-no="23" data-name="수뜰리에 소프트 섬유유연제 비누향, 2.5l, 4개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260916_st1_2559049861.jpg" alt="수뜰리에 소프트 섬유유연제 비누향, 2.5L, 4개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">23번</span>
-      </div>
-      <div class="body">
-        <p class="name">수뜰리에 소프트 섬유유연제 비누향, 2.5L, 4개</p>
-        <div class="price">8,890원</div>
-        <div class="meta">추천템 No.23 · 2026-09-16</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/7bDp6Kwy" rel="nofollow sponsored noopener" target="_blank" data-no="22" data-name="맘스럽 플로럴 액체세제, 2.5l, 5개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260915_st1_2335791299.jpg" alt="맘스럽 플로럴 액체세제, 2.5L, 5개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">22번</span>
-      </div>
-      <div class="body">
-        <p class="name">맘스럽 플로럴 액체세제, 2.5L, 5개</p>
-        <div class="price">8,900원</div>
-        <div class="meta">추천템 No.22 · 2026-09-15</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/3B5EX4ro" rel="nofollow sponsored noopener" target="_blank" data-no="21" data-name="을지로 연탄불고기식 돼지불고기, 250g, 4개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260914_st1_2278446229.jpg" alt="을지로 연탄불고기식 돼지불고기, 250g, 4개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">21번</span>
-      </div>
-      <div class="body">
-        <p class="name">을지로 연탄불고기식 돼지불고기, 250g, 4개</p>
-        <div class="price">7,990원</div>
-        <div class="meta">추천템 No.21 · 2026-09-14</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/LMDABSBD" rel="nofollow sponsored noopener" target="_blank" data-no="20" data-name="꿀이구마 호박 찹쌀 약과, 30g, 30개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260913_st1_423535267.jpg" alt="꿀이구마 호박 찹쌀 약과, 30g, 30개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">20번</span>
-      </div>
-      <div class="body">
-        <p class="name">꿀이구마 호박 찹쌀 약과, 30g, 30개</p>
-        <div class="price">4,990원</div>
-        <div class="meta">추천템 No.20 · 2026-09-13</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/P0MiPgBx" rel="nofollow sponsored noopener" target="_blank" data-no="19" data-name="바리스타룰스 원데이 무라벨, 아메리카노, 350ml, 20개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260912_st1_127004407.jpg" alt="바리스타룰스 원데이 무라벨, 아메리카노, 350ml, 20개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">19번</span>
-      </div>
-      <div class="body">
-        <p class="name">바리스타룰스 원데이 무라벨, 아메리카노, 350ml, 20개</p>
-        <div class="price">10,900원</div>
-        <div class="meta">추천템 No.19 · 2026-09-12</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/vxXt3tam" rel="nofollow sponsored noopener" target="_blank" data-no="18" data-name="시치미 쓱 데일리 물티슈 캡형, 100매, 10팩">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260911_st1_1536550523.jpg" alt="시치미 쓱 데일리 물티슈 캡형, 100매, 10팩" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">18번</span>
-      </div>
-      <div class="body">
-        <p class="name">시치미 쓱 데일리 물티슈 캡형, 100매, 10팩</p>
-        <div class="price">5,000원</div>
-        <div class="meta">추천템 No.18 · 2026-09-11</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/7ulbxSVl" rel="nofollow sponsored noopener" target="_blank" data-no="17" data-name="제주 삼다수, 라벨 랜덤, 2l, 12병">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260910_st1_10343641.jpg" alt="제주 삼다수, 라벨 랜덤, 2L, 12병" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">17번</span>
-      </div>
-      <div class="body">
-        <p class="name">제주 삼다수, 라벨 랜덤, 2L, 12병</p>
-        <div class="price">12,630원</div>
-        <div class="meta">추천템 No.17 · 2026-09-10</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/f0P9lpLa" rel="nofollow sponsored noopener" target="_blank" data-no="16" data-name="애슐리 볶음밥 올인원 10종 세트, 1개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260909_st1_31419195.jpg" alt="애슐리 볶음밥 올인원 10종 세트, 1개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">16번</span>
-      </div>
-      <div class="body">
-        <p class="name">애슐리 볶음밥 올인원 10종 세트, 1개</p>
-        <div class="price">21,900원</div>
-        <div class="meta">추천템 No.16 · 2026-09-09</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/R8HG9w6h" rel="nofollow sponsored noopener" target="_blank" data-no="15" data-name="푸주 한돈 고추장 돼지불고기, 300g, 4개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260908_st1_8834733.jpg" alt="푸주 한돈 고추장 돼지불고기, 300g, 4개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">15번</span>
-      </div>
-      <div class="body">
-        <p class="name">푸주 한돈 고추장 돼지불고기, 300g, 4개</p>
-        <div class="price">10,900원</div>
-        <div class="meta">추천템 No.15 · 2026-09-08</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/vWF27asw" rel="nofollow sponsored noopener" target="_blank" data-no="14" data-name="구워먹는 할루미치즈, 200g, 3개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260907_st1_2375083883.jpg" alt="구워먹는 할루미치즈, 200g, 3개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">14번</span>
-      </div>
-      <div class="body">
-        <p class="name">구워먹는 할루미치즈, 200g, 3개</p>
-        <div class="price">7,600원</div>
-        <div class="meta">추천템 No.14 · 2026-09-07</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/v27eiMN9" rel="nofollow sponsored noopener" target="_blank" data-no="13" data-name="베베앙 시그니처 물티슈 캡형, 100매, 10팩">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260906_st1_13017669.jpg" alt="베베앙 시그니처 물티슈 캡형, 100매, 10팩" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">13번</span>
-      </div>
-      <div class="body">
-        <p class="name">베베앙 시그니처 물티슈 캡형, 100매, 10팩</p>
-        <div class="price">12,990원</div>
-        <div class="meta">추천템 No.13 · 2026-09-06</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/DkJWHmMD" rel="nofollow sponsored noopener" target="_blank" data-no="12" data-name="20년 장인김치 전라도식 배추김치, 10kg, 1박스">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260905_st1_748235733.jpg" alt="20년 장인김치 전라도식 배추김치, 10kg, 1박스" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">12번</span>
-      </div>
-      <div class="body">
-        <p class="name">20년 장인김치 전라도식 배추김치, 10kg, 1박스</p>
-        <div class="price">32,900원</div>
-        <div class="meta">추천템 No.12 · 2026-09-05</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/HqVpQJx8" rel="nofollow sponsored noopener" target="_blank" data-no="11" data-name="스파클 생수, 무라벨, 500ml, 80개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260904_st1_10143179.jpg" alt="스파클 생수, 무라벨, 500ml, 80개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">11번</span>
-      </div>
-      <div class="body">
-        <p class="name">스파클 생수, 무라벨, 500ml, 80개</p>
-        <div class="price">8,800원</div>
-        <div class="meta">추천템 No.11 · 2026-09-04</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/TND6qV8h" rel="nofollow sponsored noopener" target="_blank" data-no="10" data-name="널담 고단백 배꼽 베이글, 맛혼합, 10개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260903_st1_2401832945.jpg" alt="널담 고단백 배꼽 베이글, 맛혼합, 10개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">10번</span>
-      </div>
-      <div class="body">
-        <p class="name">널담 고단백 배꼽 베이글, 맛혼합, 10개</p>
-        <div class="price">12,600원</div>
-        <div class="meta">추천템 No.10 · 2026-09-03</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/RH4xudai" rel="nofollow sponsored noopener" target="_blank" data-no="9" data-name="블루나 본 물티슈 오리지널, 100매, 10팩">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260902_st1_2141401261.jpg" alt="블루나 본 물티슈 오리지널, 100매, 10팩" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">9번</span>
-      </div>
-      <div class="body">
-        <p class="name">블루나 본 물티슈 오리지널, 100매, 10팩</p>
-        <div class="price">9,970원</div>
-        <div class="meta">추천템 No.9 · 2026-09-02</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/hYi1uK8i" rel="nofollow sponsored noopener" target="_blank" data-no="8" data-name="한예지 가든 플라워 3겹 천연펄프 화장지, 30m, 30롤, 2팩">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260901_st1_379824037.jpg" alt="한예지 가든 플라워 3겹 천연펄프 화장지, 30m, 30롤, 2팩" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">8번</span>
-      </div>
-      <div class="body">
-        <p class="name">한예지 가든 플라워 3겹 천연펄프 화장지, 30m, 30롤, 2팩</p>
-        <div class="price">12,900원</div>
-        <div class="meta">추천템 No.8 · 2026-09-01</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/dSJZzXSA" rel="nofollow sponsored noopener" target="_blank" data-no="7" data-name="스파클 생수, 무라벨, 500ml, 80개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260831_st1_651526161.jpg" alt="스파클 생수, 무라벨, 500ml, 80개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">7번</span>
-      </div>
-      <div class="body">
-        <p class="name">스파클 생수, 무라벨, 500ml, 80개</p>
-        <div class="price">16,490원</div>
-        <div class="meta">추천템 No.7 · 2026-08-31</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/zjRxIIfw" rel="nofollow sponsored noopener" target="_blank" data-no="6" data-name="푸릇담 젊은농부 양배추즙, 100ml, 30팩">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260830_st1_2523489535.jpg" alt="푸릇담 젊은농부 양배추즙, 100ml, 30팩" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">6번</span>
-      </div>
-      <div class="body">
-        <p class="name">푸릇담 젊은농부 양배추즙, 100ml, 30팩</p>
-        <div class="price">5,990원</div>
-        <div class="meta">추천템 No.6 · 2026-08-30</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/FDZj6Ta7" rel="nofollow sponsored noopener" target="_blank" data-no="5" data-name="예진원 국내산 abc주스, 80ml, 100포, 1개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260829_st1_146650681.jpg" alt="예진원 국내산 ABC주스, 80ml, 100포, 1개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">5번</span>
-      </div>
-      <div class="body">
-        <p class="name">예진원 국내산 ABC주스, 80ml, 100포, 1개</p>
-        <div class="price">18,130원</div>
-        <div class="meta">추천템 No.5 · 2026-08-29</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/d5qqn7Uq" rel="nofollow sponsored noopener" target="_blank" data-no="4" data-name="발이 편한 카바 밴딩 중목 양말, 화이트, 10켤레">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260828_st1_2264708383.jpg" alt="발이 편한 카바 밴딩 중목 양말, 화이트, 10켤레" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">4번</span>
-      </div>
-      <div class="body">
-        <p class="name">발이 편한 카바 밴딩 중목 양말, 화이트, 10켤레</p>
-        <div class="price">4,200원</div>
-        <div class="meta">추천템 No.4 · 2026-08-28</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/DL27Bcyj" rel="nofollow sponsored noopener" target="_blank" data-no="3" data-name="맘스럽 아토워시 프렌치 라벤더 캡슐세제 파우치형, 실내건조형, 200개입, 1개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260827_st1_102193743.jpg" alt="맘스럽 아토워시 프렌치 라벤더 캡슐세제 파우치형, 실내건조형, 200개입, 1개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">3번</span>
-      </div>
-      <div class="body">
-        <p class="name">맘스럽 아토워시 프렌치 라벤더 캡슐세제 파우치형, 실내건조형, 200개입, 1개</p>
-        <div class="price">5,700원</div>
-        <div class="meta">추천템 No.3 · 2026-08-27</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/rTQjFgGd" rel="nofollow sponsored noopener" target="_blank" data-no="2" data-name="스파클 생수, 무라벨, 2l, 24개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260826_st1_90382271.jpg" alt="스파클 생수, 무라벨, 2L, 24개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">2번</span>
-      </div>
-      <div class="body">
-        <p class="name">스파클 생수, 무라벨, 2L, 24개</p>
-        <div class="price">8,990원</div>
-        <div class="meta">추천템 No.2 · 2026-08-26</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-    <a class="card" href="https://toss.im/_m/pPv3yFVq" rel="nofollow sponsored noopener" target="_blank" data-no="1" data-name="에브리워터 무라벨, 500ml, 40개">
-      <div class="thumb">
-        <img src="https://cdn.jsdelivr.net/gh/temcheckdaily/temcheckdaily.github.io@main/cards/20260825_st1_12833301.jpg" alt="에브리워터 무라벨, 500ml, 40개" loading="lazy" onerror="this.style.display='none'">
-        <span class="no-badge">1번</span>
-      </div>
-      <div class="body">
-        <p class="name">에브리워터 무라벨, 500ml, 40개</p>
-        <div class="price">7,700원</div>
-        <div class="meta">추천템 No.1 · 2026-08-25</div>
-      </div>
-      <div class="cta">보러가기</div>
-    </a>
-  </main>
-  <div class="noresult" id="steady-noresult">해당 번호의 추천템이 없어요 🥲</div>
+<a class="card" id="n5" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/567000000751" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">5</span><span class="region">창원</span><span class="badge ">D-34</span></div>
+  <div class="title">창원 새내기 지원금</div>
+  <div class="amount">1인 연 100만원 · 상·하반기 50만원씩</div>
+  <div class="who">창원 고교 졸업 + 창원 소재 대학 1학년, 3/3 기준 창원 1년 이상 거주 34세 이하</div>
+  <div class="row2"><span>~ 10/31(토)</span><span class="go">신청 페이지 →</span></div>
+</a>
 
-  </section>
+<a class="card" id="n4" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/138300000052" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">4</span><span class="region">전국</span><span class="badge soon">10/1 오픈</span></div>
+  <div class="title">청소년 미혼 한부모 자립지원</div>
+  <div class="amount">매월 생활비 50만원</div>
+  <div class="who">24세 이하 미혼 한부모·임산부 (19세 이하 소득 무관 / 20~24세 중위소득 50% 이하)</div>
+  <div class="row2"><span>10/1(목) ~ 10/31(토)</span><span class="go">신청 페이지 →</span></div>
+</a>
 
-<script>
-(function () {
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
-  var panes = Array.prototype.slice.call(document.querySelectorAll('.pane'));
-  function show(id) {
-    tabs.forEach(function (t) { t.classList.toggle('on', t.dataset.pane === id); });
-    panes.forEach(function (p) { p.classList.toggle('on', p.id === id); });
-    try { history.replaceState(null, '', id === 'pane-steady' ? '#steady' : '#'); } catch (e) {}
-    filter();
-  }
-  tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.pane); }); });
-
-  var q = document.getElementById('q');
-  function cards(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
-  function filter() {
-    if (!q) return;
-    var v = q.value.trim().toLowerCase().replace(/번$/, '');
-    var active = document.querySelector('.pane.on');
-    if (!active) return;
-    var list = cards('#' + active.id + ' .card');
-    var shown = 0;
-    var numeric = /^\d+$/.test(v);
-    var exact = numeric && list.some(function (el) { return el.dataset.no === v; });
-    list.forEach(function (el) {
-      var name = (el.dataset.name || el.querySelector('.name').textContent || '').toLowerCase();
-      var hit = !v || (exact ? el.dataset.no === v : (el.dataset.no === v || name.indexOf(v) !== -1));
-      el.style.display = hit ? '' : 'none';
-      if (hit) shown++;
-    });
-    var nr = document.getElementById(active.id === 'pane-steady' ? 'steady-noresult' : 'deals-noresult');
-    if (nr) nr.style.display = (v && !shown) ? 'block' : 'none';
-    // 숫자만 쳤는데 특가 탭이면 보관함으로 안내
-    if (v && /^\d+$/.test(v) && active.id === 'pane-deals' && !shown) show('pane-steady');
-  }
-  if (q) q.addEventListener('input', filter);
-
-  // 진입: #steady 또는 ?no=3 → 보관함 열고 검색
-  var m = location.search.match(/[?&]no=(\d+)/);
-  if (location.hash === '#steady' || m) {
-    show('pane-steady');
-    if (m && q) { q.value = m[1]; filter(); }
-  }
-})();
-</script>
-
-  <footer>
-    <div>이 게시물은 토스쇼핑 쉐어링크 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
-    <div>상품 이미지·가격 정보는 토스쇼핑 판매자가 제공한 데이터를 그대로 표시합니다.</div>
-    <div class="links">
-      <a href="https://www.threads.net/@temcheck.daily">Threads</a>
-      <a href="https://www.instagram.com/temcheck.daily">Instagram</a>
-    </div>
-  </footer>
+<a class="card" id="n6" href="https://www.gov.kr/portal/rcvfvrSvc/dtlEx/402000000126" target="_blank" rel="noopener">
+  <div class="row1"><span class="no">6</span><span class="region">군포</span><span class="badge soon">10/12 오픈</span></div>
+  <div class="title">청년 전월세 보증금 대출이자</div>
+  <div class="amount">대출잔액의 1% · 연 최대 100만원 (최대 4회)</div>
+  <div class="who">군포 거주 19~39세 무주택 청년 · 중위소득 180% 이하 · 전용 85㎡ 이하</div>
+  <div class="row2"><span>10/12(월) ~ 10/30(금)</span><span class="go">신청 페이지 →</span></div>
+</a>
+<div class="foot">모든 링크는 정부24 등 공식 공고 페이지로 연결돼요.<br>자격·기간은 신청 전 원문에서 꼭 확인하세요.<br>광고·제휴 링크 없음</div>
 </div>
-</body>
-</html>
+<script>
+function go(){var n=(document.getElementById('q').value||'').replace(/[^0-9]/g,'');var el=document.getElementById('n'+n);
+document.querySelectorAll('.card.focus').forEach(function(c){c.classList.remove('focus')});
+if(el){el.classList.add('focus');el.scrollIntoView({behavior:'smooth',block:'center'})}else{alert('지금 목록에 없는 번호예요. 마감됐을 수 있어요.')}}
+(function(){var h=(location.hash||'').replace('#','');if(/^\d+$/.test(h)){document.getElementById('q').value=h;setTimeout(go,300)}})();
+</script>
+</body></html>
